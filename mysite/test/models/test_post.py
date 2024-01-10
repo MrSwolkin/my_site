@@ -1,6 +1,6 @@
 import pytest
 
-from mysite.blog.factories import PostFactory
+from blog.factories import PostFactory
 #from blog import PostFactory
 
 
