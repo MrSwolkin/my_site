@@ -4,7 +4,7 @@ from faker import Factory as FakerFactory
 from django.contrib.auth.models import User
 from django.utils.timezone import now
 
-from blog.models import Post
+from .models import Post
 
 faker = FakerFactory.create()
 
@@ -26,7 +26,8 @@ class UserFactory(factory.django.DjangoModelFactory):
             if create:
                 user.save()
             return user
-        
+
+
 class PostFactory(factory.django.DjangoModelFactory):
     title = factory.LazyAttribute(lambda x: faker.sentence())
     created_on = factory.LazyAttribute(lambda x: now())
